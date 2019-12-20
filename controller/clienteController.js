@@ -28,3 +28,19 @@ exports.mostrarCliente = async (req, res, next) =>{
     }
     res.json(cliente);
 }
+exports.actualizarCliente = async (req, res, next) =>{
+    try {
+        const cliente = await Clientes.findOneAndUpdate({_id: req.params.idCliente},req.body, {new: true});
+        res.json(cliente);
+    } catch (error) {
+        next();
+    }
+}
+exports.eliminarCliente = async (req, res, next) => {
+    try {
+        await Clientes.findOneAndDelete({_id: req.params.idCliente});
+        res.json({mensaje: 'El cliente se ha eliminado'});
+        } catch (error) {
+        next();
+    }
+}
