@@ -75,4 +75,12 @@ exports.actualizarProducto = async (req, res, next) => {
     } catch (error) {
         next();   
     }
-} 
+}
+exports.eliminarProducto = async (req, res, next) =>{
+    try {
+       await Producto.findByIdAndDelete({_id: req.params.idProducto}); 
+       res.json({mensaje: 'El producto se ha eliminado'});
+    } catch (error) {
+        next();
+    }
+}
