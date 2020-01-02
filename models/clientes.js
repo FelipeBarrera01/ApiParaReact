@@ -27,5 +27,5 @@ const clientesSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('Cliente', clientesSchema);
+module.exports = mongoose.model('Cliente', clientesSchema );
 

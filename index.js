@@ -15,4 +15,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 app.use('/', routes());
+app.use(express.static('uploads'));
 app.listen(5000);

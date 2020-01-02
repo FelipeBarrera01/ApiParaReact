@@ -20,5 +20,6 @@ module.exports = function(){
     router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
     router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
     router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
+    router.post('/productos/busqueda/:query', productosController.buscarProducto);
     return router;
 }
